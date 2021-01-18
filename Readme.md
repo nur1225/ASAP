@@ -46,22 +46,22 @@ During configuration you will notice that several parts of ASAP can be built sep
 After all the dependencies are resolved, hit Generate and CMake will create a Visual Studio Solution or makefile file which can be used to compile the source code.
 ## ASAP 源码编译 VS2019
 # 安装 ASAP 依赖包
-- Boost (http://www.boost.org/)
-  -下载 boost源码并解压
-  -打开cmd 并 cd boost 根目录
-  -运行 bootstrap.bat 文件生成 b2.exe 可执行文件 ： cd boost , bootstrap.bat
-  -运行b2.exe 文件 生成 lib文件夹下和include 文件夹下的头文件 ： b2.exe toolset=msvc-14.2 --build-type=complete architecture=x86 address-model=64 link=static variant=debug,release threading=multi runtime-link=static instal
-  -C盘中生成 Boost 文件夹
+- Boost (http://www.boost.org/)<br>
+  -下载 boost源码并解压<br>
+  -打开cmd 并 cd boost 根目录<br>
+  -运行 bootstrap.bat 文件生成 b2.exe 可执行文件 ： cd boost , bootstrap.bat<br>
+  -运行b2.exe 文件 生成 lib文件夹下和include 文件夹下的头文件 ： b2.exe toolset=msvc-14.2 --build-type=complete architecture=x86 address-model=64 link=static variant=debug,release threading=multi runtime-link=static instal<br>
+  -C盘中生成 Boost 文件夹<br>
 - OpenCV (http://www.opencv.org/)
 - Qt (http://www.qt.io/)
-- DCMTK-LIBJPEG (链接：https://pan.baidu.com/s/1dA28UIwFy2hIuONv11Y6pw )【密码：1234】
--- 下载百度网盘中DCMTK 文件夹并解压即可
-- SWIG (http://www.swig.org/) (only for Python wrapping of the IO library)
--- 官方中下载并安装即可
-- OpenSlide (链接：https://pan.baidu.com/s/12h2cJOyvqH6-3ekj5FXabw)   【密码：1234】
--- 下载百度网盘中OpenSlide 文件夹并解压即可
-- PugiXML (http://pugixml.org/)
--- 官方中下载PuguiXML 并安装即可
+- DCMTK-LIBJPEG (链接：https://pan.baidu.com/s/1dA28UIwFy2hIuONv11Y6pw )【密码：1234】<br>
+  -下载百度网盘中DCMTK 文件夹并解压即可
+- SWIG (http://www.swig.org/) (only for Python wrapping of the IO library)<br>
+  -官方中下载并安装即可
+- OpenSlide (链接：https://pan.baidu.com/s/12h2cJOyvqH6-3ekj5FXabw)   【密码：1234】<br>
+  -下载百度网盘中OpenSlide 文件夹并解压即可
+- PugiXML (http://pugixml.org/)<br>
+  -官方中下载PuguiXML 并安装即可
 
 ## ASAP源码进行Cmake
 - cmake -B ./build -DBOOST_ROOT=C:\Boost -DJPEG_INCLUDE_DIR=D:/workspace/srcCode/ASAP-1.9/thirdpart/custom_openslide/artefacts/include  -DJPEG_LIBRARY_DEBUG=D:/workspace/srcCode/ASAP-1.9/thirdpart/custom_openslide/artefacts/lib/libjpeg.dll.a  -DJPEG_LIBRARY_RELEASE=D:/workspace/srcCode/ASAP-1.9/thirdpart/custom_openslide/artefacts/lib/libjpeg.dll.a -DOpenJPEG_DIR=D:/workspace/srcCode/ASAP-1.9/thirdpart/custom_openslide/artefacts/lib/openjpeg-2.3 -DOPENSLIDE_INCLUDE_DIR=D:/workspace/srcCode/ASAP-1.9/thirdpart/custom_openslide/include/openslide -DOPENSLIDE_LIBRARY=D:/workspace/srcCode/ASAP-1.9/thirdpart/custom_openslide/lib/libopenslide.lib -DDCMTKJPEG_INCLUDE_DIR=D:/workspace/srcCode/ASAP-1.9/thirdpart/dcmtk-libjpeg/include -DDCMTKJPEG_LIBRARY=D:/workspace/srcCode/ASAP-1.9/thirdpart/dcmtk-libjpeg/lib/ijg8.lib -DTIFF_INCLUDE_DIR=D:/workspace/srcCode/ASAP-1.9/thirdpart/custom_openslide/artefacts/include -DTIFF_LIBRARY_DEBUG=D:/workspace/srcCode/ASAP-1.9/thirdpart/custom_openslide/artefacts/lib/libtiff.dll.a -DTIFF_LIBRARY_RELEASE=D:/workspace/srcCode/ASAP-1.9/thirdpart/custom_openslide/artefacts/lib/libtiff.dll.a -DZLIB_INCLUDE_DIR=D:/workspace/srcCode/ASAP-1.9/thirdpart/custom_openslide/artefacts/include -DZLIB_LIBRARY_DEBUG=D:/workspace/srcCode/ASAP-1.9/thirdpart/custom_openslide/artefacts/lib/libz.dll.a -DZLIB_LIBRARY_RELEASE=D:/workspace/srcCode/ASAP-1.9/thirdpart/custom_openslide/artefacts/lib/libz.dll.a -DPugiXML_INCLUDE_DIR=D:/workspace/srcCode/ASAP-1.9/thirdpart/pugixml/src -DBUILD_MULTIRESOLUTIONIMAGEINTERFACE_VSI_SUPPORT=ON -DPACKAGE_ON_INSTALL=TRUE -DBUILD_ASAP=TRUE -DBUILD_IMAGEPROCESSING=TRUE -DBUILD_EXECUTABLES=TRUE -DQt5_DIR=C:/Qt/Qt5.9.2/5.9.2/msvc2017_64/lib/cmake/Qt5 -DOpenCV_DIR=C:/opencv-4.3.0/opencv/build/x64/vc14/lib -DBUILD_WORKLIST_INTERFACE=TRUE -DWRAP_MULTIRESOLUTIONIMAGEINTERFACE_PYTHON=ON -DWRAP_WHOLESLIDEFILTERS_PYTHON=ON -DPYTHON_DEBUG_LIBRARY=D:/tools/conda/envs/asap/libs/python38.lib -DPYTHON_LIBRARY=D:/tools/conda/envs/asap/libs/python38.lib -DPYTHON_LIBRARY_DEBUG=D:/tools/conda/envs/asap/libs/python38.lib -DPYTHON_INCLUDE_DIR=D:/tools/conda/envs/asap/include -DPYTHON_EXECUTABLE=D:/tools/conda/envs/asap/python.exe -DPYTHON_NUMPY_INCLUDE_DIR=D:/tools/conda/envs/asap/Lib/site-packages/numpy/core/include -DDCMTKJPEG_INCLUDE_DIR=D:/workspace/srcCode/ASAP-1.9/thirdpart/dcmtk-libjpeg/include -DDCMTKJPEG_LIBRARY=D:/workspace/srcCode/ASAP-1.9/thirdpart/dcmtk-libjpeg/lib/ijg8.lib -DSWIG_EXECUTABLE=D:/workspace/srcCode/ASAP-1.9/thirdpart/swigwin-4.0.1/swig.exe
