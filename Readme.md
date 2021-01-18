@@ -44,3 +44,5 @@ Subsequently, fire up CMake, point it to a source and build directory and hit Co
 During configuration you will notice that several parts of ASAP can be built seperately (e.g. the viewer). To build this part, simply check the component and hit Configure again. The 'Package on install'-option will allow you to build a binary setup-package like the one provided on the Github-release page. On Windows this requires NSIS to be installed.
 
 After all the dependencies are resolved, hit Generate and CMake will create a Visual Studio Solution or makefile file which can be used to compile the source code.
+
+## ASAP 编译  VS2019
