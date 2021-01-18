@@ -47,11 +47,11 @@ After all the dependencies are resolved, hit Generate and CMake will create a Vi
 ## ASAP 源码编译 VS2019
 # 安装 ASAP 依赖包
 - Boost (http://www.boost.org/)
--- 下载 boost源码并解压
--- 打开cmd 并 cd boost 根目录
--- 运行 bootstrap.bat 文件生成 b2.exe 可执行文件 ： cd boost , bootstrap.bat
--- 运行b2.exe 文件 生成 lib文件夹下和include 文件夹下的头文件 ： b2.exe toolset=msvc-14.2 --build-type=complete architecture=x86 address-model=64 link=static variant=debug,release threading=multi runtime-link=static install
--- C盘中生成 Boost 文件夹
+  -下载 boost源码并解压
+  -打开cmd 并 cd boost 根目录
+  -运行 bootstrap.bat 文件生成 b2.exe 可执行文件 ： cd boost , bootstrap.bat
+  -运行b2.exe 文件 生成 lib文件夹下和include 文件夹下的头文件 ： b2.exe toolset=msvc-14.2 --build-type=complete architecture=x86 address-model=64 link=static variant=debug,release threading=multi runtime-link=static instal
+  -C盘中生成 Boost 文件夹
 - OpenCV (http://www.opencv.org/)
 - Qt (http://www.qt.io/)
 - DCMTK-LIBJPEG (链接：https://pan.baidu.com/s/1dA28UIwFy2hIuONv11Y6pw )【密码：1234】
